@@ -5,7 +5,7 @@
 
 Raptor Cryptographic Algorithm Official Full Source Code and Documentation Distribution Repertory
 
-This work project have been released under Licence GNU General Public License v3.0 in CNRS laboratory ICGM.
+This work project have been released under **Licence GNU General Public License v3.0** in *CNRS laboratory ICGM - Montpellier, FRANCE*.
 
 # Setup
 
