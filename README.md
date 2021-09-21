@@ -3,13 +3,13 @@
 **Author**  CABOS Matthieu
 **Release Date** 21/09/2021
 
-Raptor Cryptographic Algorithm Official Full Source Code and Documentation Distribution Repository
+**Raptor Cryptographic Algorithm Official Full Source Code and Documentation Distribution Repository**
 
 This work project have been released under **Licence GNU General Public License v3.0** 
 
-Project release @ *CNRS laboratory ICGM - Montpellier, FRANCE*.
+Project release @ **CNRS laboratory ICGM - Montpellier, FRANCE**         
 
-Source Code release @ *CNRS laboratory INRAE/TSE - Toulouse, FRANCE*
+Source Code release @ **CNRS laboratory INRAE/TSE - Toulouse, FRANCE**   
 
 # Setup
 
