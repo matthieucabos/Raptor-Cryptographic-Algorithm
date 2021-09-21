@@ -9,6 +9,8 @@ This work project have been released under **Licence GNU General Public License 
 
 Project release @ *CNRS laboratory ICGM - Montpellier, FRANCE*.
 
+Source Code release @ *CNRS laboratory INRAE/TSE - Toulouse, FRANCE*
+
 # Setup
 
 Build the html Documentation from the **make html** command.
