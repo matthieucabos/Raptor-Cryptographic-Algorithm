@@ -1,5 +1,8 @@
 # Raptor-Cryptographic-Algorithm
 
+**Author**  CABOS Matthieu
+**Release Date** 21/09/2021
+
 Raptor Cryptographic Algorithm Official Full Source Code and Documentation Distribution Repertory
 
 This work project have been released under Licence GNU General Public License v3.0 in CNRS laboratory ICGM.
@@ -8,7 +11,9 @@ This work project have been released under Licence GNU General Public License v3
 
 Build the html Documentation from the **make html** command.
 
-See Full documents at : 
+The full printable pdf is avaible inside the repertory.
+
+See Full documents at : https://raptor-cryptographic-algorithm.readthedocs.io/en/latest/
 
 # Support
 
