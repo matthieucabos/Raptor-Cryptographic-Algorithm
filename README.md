@@ -1,6 +1,7 @@
 # Raptor-Cryptographic-Algorithm
 
 **Author**  CABOS Matthieu
+
 **Release Date** 21/09/2021
 
 **Raptor Cryptographic Algorithm Official Full Source Code and Documentation Distribution Repository**
