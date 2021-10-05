@@ -35,6 +35,7 @@ then
 		count=$((count + 16))
 	done
 
+# Automate via sub shell to make it faster.
 	for item in $splitted
 	do
 		echo "c" ; echo $item | ./basetestrecursivev2 >> crypted.txt
@@ -60,6 +61,8 @@ else
 		count=$((count + 1))
 	done
 	count=1
+
+# Automate via sub shell to make it faster.	
 	for item in $splitted 
 	do
 		set -- $item
