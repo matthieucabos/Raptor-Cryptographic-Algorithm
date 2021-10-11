@@ -1,0 +1,28 @@
+#!/usr/bin/expect
+
+# Author : CABOS Matthieu
+# Date : 07/10/2021
+
+set timeout 2
+
+set splitted [lindex $argv 0]
+set count 0
+spawn ./basetestrecursivev2_solveur
+
+foreach item $splitted {
+	if { $count == 0 } {
+		set txt $item
+		set count 1
+	} else {
+		set key $item
+		set count 0
+		expect "Veuillez entrer la chaine cryptée : "
+		send $txt
+		send "\r"
+		expect "Veuillez saisir la clé : "
+		send $key
+		send "\r"
+		expect "c)ontinuer ou q)uitter?"
+		send "c\r"
+	}
+}
