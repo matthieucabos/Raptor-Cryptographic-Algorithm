@@ -46,14 +46,14 @@ Crypting Process
 
 **./Automate.sh** 1 *Data_as_string_to_crypt*
   
-and will produce two file : Crypted.txt and Key.txt representing the crypted data.
+and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted data.
   
 Decrypting Process
 ------------------
   
 **./Automate.sh 2**
   
- will read the Crypted.txt and Key.txt files and will produce a res.txt containing uncrypted string.
+ will read the *Crypted.txt* and *Key.txt* files and will produce a res.txt containing uncrypted string.
  
  Results are shown as line by line result, wich can be colmated removing '\n' instances.
   
