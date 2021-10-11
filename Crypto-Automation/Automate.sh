@@ -54,8 +54,6 @@ else
 		key=`cat Key.txt | head -$count | tail -1`
 		echo $tmp >> tmp
 		echo $key >> tmp
-		# python3 concat.py $tmp $key >> tmp
-		# splitted="$splitted $tmp $key"
 		count=$(( count + 1 ))
 	done
 	splitted=`cat tmp`
