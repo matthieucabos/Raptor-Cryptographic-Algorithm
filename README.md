@@ -38,6 +38,8 @@ To use, you can test each algorithm individually.
 
 If you want to automate the process, use the Shell Script Automate.sh found in the Crypto-Automation Repertory.
 
+You can use the associated *Crypted.txt* and *Key.txt* file to get an example of decrypting process, wrote into res.txt using the decrypting process.
+
 The Shell Script must be use with the following syntax :
 
 
