@@ -27,6 +27,11 @@ See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/
   
  **python3 -m nuitka --follow-imports** *Algorithm_to_compile*
  
+ This compilation need the nuitka module, avaible using the following command :
+ 
+ **pip install nuitka**
+ 
+ 
 # Use
 
 To use, you can test each algorithm individually. 
