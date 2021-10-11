@@ -57,7 +57,11 @@ Decrypting Process
   
  will read the *Crypted.txt* and *Key.txt* files and will produce a res.txt containing uncrypted string.
  
- Results are shown as line by line result, wich can be colmated removing '\n' instances.
+ Results are shown as line by line result, wich can be colmated removing '\n' instances using the Clear_res.py Script.
+ 
+ **python3 Clear_res.py**
+ 
+ It will give the clear text.
   
  
 # Support
