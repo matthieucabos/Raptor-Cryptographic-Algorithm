@@ -42,7 +42,11 @@ then
 	cat crypted.txt | grep "^!" >> Crypted.txt
 	cat crypted.txt | grep "^[0-9]" >> Key.txt 
 	rm crypted.txt
+	tr '\n' '.' < Crypted.txt
+	tr '\n' '.' < Key.txt
 else
+	tr '.' '\n' < Crypted.txt
+	tr '.' '\n' < Key.txt
 	splitted=""
 	raw_crypted=`cat Crypted.txt`
 	raw_key=`cat Key.txt`
@@ -71,6 +75,7 @@ else
 		cat uncrypted.txt | head -$count | tail -1 >> res.txt
 		count=$(( count + 9 ))
 	done
+	python3 Clear_res.py
 	rm tmp
 	rm uncrypted.txt
 fi
