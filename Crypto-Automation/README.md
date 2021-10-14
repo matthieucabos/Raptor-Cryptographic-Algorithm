@@ -4,6 +4,10 @@
 
 **Release Date** 21/09/2021
 
+**Organisation** ICGM-CNRS
+
+______________________________________________________________________________________________________
+
 This script has been thinked to automate the Raptor Cryptographic Algorithm.
 It allow to crypt much larger String as raw data band.
 
