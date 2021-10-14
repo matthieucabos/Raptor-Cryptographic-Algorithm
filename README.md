@@ -6,11 +6,15 @@
 
 **Raptor Cryptographic Algorithm Official Full Source Code and Documentation Distribution Repository**
 
+______________________________________________________________________________________________________
+
 This work project have been released under **Licence GNU General Public License v3.0** 
 
 Project release @ **CNRS laboratory ICGM - Montpellier, FRANCE**         
 
 Source Code release @ **CNRS laboratory INRAE/TSE - Toulouse, FRANCE**   
+
+______________________________________________________________________________________________________
 
 # Setup
 
