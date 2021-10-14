@@ -1,6 +1,8 @@
 import sys
 import os
 
+# This script can be used to hide results from Crypted.txt and Key.txt
+
 file_name=sys.argv[1]
 mode = sys.argv[2]
 file_name_out = sys.argv[3]
