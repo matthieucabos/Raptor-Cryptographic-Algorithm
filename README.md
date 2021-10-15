@@ -16,7 +16,7 @@ Source Code release @ **CNRS laboratory INRAE/TSE - Toulouse, FRANCE**
 
 ______________________________________________________________________________________________________
 
-# Setup
+## Setup
 
 Build the html Documentation from the **make html** command.
 
@@ -25,18 +25,18 @@ The full printable pdf is avaible inside the Repository.
 See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/latest/
 
 
-# Compilation
+## Compilation
   
  Each algorithm can be indepedantly compiled via the command
-  
- **python3 -m nuitka --follow-imports** *Algorithm_to_compile*
- 
+ ```bash
+ python3 -m nuitka --follow-imports Algorithm_to_compile
+ ```
  This compilation need the nuitka module, avaible using the following command :
+  ```bash
+ pip install nuitka
+  ```
  
- **pip install nuitka**
- 
- 
-# Use
+## Use
 
 To use, you can test each algorithm individually. 
 
@@ -46,28 +46,32 @@ You can use the associated *Crypted.txt* and *Key.txt* file to get an example of
 
 The Shell Script must be use with the following syntax :
 
+***********************************************
 
-Crypting Process
-----------------
+### Crypting Process
 
-**./Automate.sh** 1 *Data_as_string_to_crypt*
-  
+ ```bash
+./Automate.sh 1 Data_as_string_to_crypt
+ ```  
 and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted data.
-  
-Decrypting Process
-------------------
-  
-**./Automate.sh 2**
-  
+
+***********************************************
+
+### Decrypting Process
+
+  ```bash 
+./Automate.sh 2
+  ``` 
  will read the *Crypted.txt* and *Key.txt* files and will produce a res.txt containing uncrypted string.
  
  Results are shown as line by line result, wich can be colmated removing '\n' instances using the Clear_res.py Script.
- 
- **python3 Clear_res.py**
- 
+ ```bash 
+ python3 Clear_res.py
+  ```
  It will give the clear text.
-  
  
-# Support
+ ***********************************************
+ 
+## Support
 
 For any support request, contact @ matthieu.cabos@umontpellier.fr
