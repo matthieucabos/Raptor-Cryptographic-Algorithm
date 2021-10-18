@@ -54,11 +54,11 @@ then
 	cat crypted.txt | grep "^[!\"#$%&()*+,./:;<=>?@][0-9a-z]" >> Crypted.txt   
 	cat crypted.txt | grep "^[0-9]" >> Key.txt 
 	rm crypted.txt
-	tr '\n' '_' < Crypted.txt
-	tr '\n' '_' < Key.txt
+	# tr '\n' '_' < Crypted.txt
+	# tr '\n' '_' < Key.txt
 else
-	tr '_' '\n' < Crypted.txt
-	tr '_' '\n' < Key.txt
+	# tr '_' '\n' < Crypted.txt
+	# tr '_' '\n' < Key.txt
 	splitted=""
 	raw_crypted=`cat Crypted.txt`
 	raw_key=`cat Key.txt`
