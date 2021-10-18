@@ -40,7 +40,7 @@ See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/
 
 To use, you can test each algorithm individually. 
 
-If you want to automate the process, use the Shell Script Automate.sh found in the Crypto-Automation Repertory.
+If you want to automate the process, use the Shell Script Automatev0.sh found in the Crypto-Automation Repertory.
 
 You can use the associated *Crypted.txt* and *Key.txt* file to get an example of decrypting process, wrote into res.txt using the decrypting process.
 
@@ -56,9 +56,9 @@ sudo apt-get install -y expect
 ### Crypting Process
 
  ```bash
-./Automate.sh 1 1 Data_as_string_to_crypt
+./Automatev0.sh 1 1 Data_as_string_to_crypt
 
-./Automate.sh <Mode> <Algorithm> <Data_as_string_to_crypt>
+./Automatev0.sh <Mode> <Algorithm> <Data_as_string_to_crypt>
  ```  
 and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted data.
 
@@ -67,9 +67,9 @@ and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted
 ### Decrypting Process
 
   ```bash 
-./Automate.sh 2 1
+./Automatev0.sh 2 1
 
-./Automate.sh <Mode> <Algorithm>
+./Automatev0.sh <Mode> <Algorithm>
   ``` 
  will read the *Crypted.txt* and *Key.txt* files and will produce a res.txt containing uncrypted string.
  
