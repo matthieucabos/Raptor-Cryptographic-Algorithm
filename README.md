@@ -16,6 +16,24 @@ Source Code release @ **CNRS laboratory INRAE/TSE - Toulouse, FRANCE**
 
 ______________________________________________________________________________________________________
 
+# Warning
+
+## High Resolution Cryptographic Protocol
+
+Only for security tools as :
+  
+  * **stream crypting**
+  * **autentification security**
+  * **cryptographic procedure**
+  * **software protection**
+  
+**WARNING : i don't support any other use, this work is under GNU General Public License v3.0 from CNRS-FRANCE**
+
+**USE WITH EXTREME CAUTION**
+
+
+______________________________________________________________________________________________________
+
 ## Setup
 
 Build the html Documentation from the **make html** command.
