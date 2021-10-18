@@ -2,7 +2,10 @@ Version Correspondance
 ======================
 
 **Author** *CABOS Matthieu*
+
 **Date** *18/10/2021*
+
+************************
 
 *basetestrecursivev2.py*               = **RAPTOR CRYPTOGRAPHIC ALGORITHM V1**
 
