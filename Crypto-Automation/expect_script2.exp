@@ -1,0 +1,22 @@
+#!/usr/bin/expect
+
+# Author : CABOS Matthieu
+# Date : 07/10/2021
+
+set timeout 2
+
+set splitted [lindex $argv 0]
+spawn ./basetestrecursivev3_longchaine
+sleep 6
+foreach item $splitted {
+	expect "Veuillez entrer la chaine à crypter : "
+	send $item
+	send "\r"
+	expect "c)ontinuer ou q)uitter"
+	send "c\r"
+}
+
+expect "c)ontinuer ou q)uitter"
+send "q\r"
+
+expect eof
