@@ -24,6 +24,8 @@ Only for security tools as :
   
   * **stream crypting**
   * **autentification security**
+  * **network protection**
+  * **vpn tunnelling**
   * **cryptographic procedure**
   * **software protection**
   
