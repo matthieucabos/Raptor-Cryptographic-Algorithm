@@ -44,8 +44,13 @@ If you want to automate the process, use the Shell Script Automate.sh found in t
 
 You can use the associated *Crypted.txt* and *Key.txt* file to get an example of decrypting process, wrote into res.txt using the decrypting process.
 
+This script use the Expect command, can be found @ 
+
 The Shell Script must be use with the following syntax :
 
+ ```bash
+sudo apt-get install -y expect
+ ```  
 ***********************************************
 
 ### Crypting Process
