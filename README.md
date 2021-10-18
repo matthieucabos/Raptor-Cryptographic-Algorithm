@@ -51,7 +51,9 @@ The Shell Script must be use with the following syntax :
 ### Crypting Process
 
  ```bash
-./Automate.sh 1 Data_as_string_to_crypt
+./Automate.sh 1 1 Data_as_string_to_crypt
+
+./Automate.sh <Mode> <Algorithm> <Data_as_string_to_crypt>
  ```  
 and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted data.
 
@@ -60,11 +62,14 @@ and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted
 ### Decrypting Process
 
   ```bash 
-./Automate.sh 2
+./Automate.sh 2 1
+
+./Automate.sh <Mode> <Algorithm>
   ``` 
  will read the *Crypted.txt* and *Key.txt* files and will produce a res.txt containing uncrypted string.
  
  Results are shown as line by line result, wich can be colmated removing '\n' instances using the Clear_res.py Script.
+ 
  ```bash 
  python3 Clear_res.py
   ```
