@@ -42,7 +42,7 @@ Build the html Documentation from the **make html** command.
 
 The full printable pdf is avaible inside the Repository.
 
-See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/latest/
+See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/main/
 
 
 ## Compilation
