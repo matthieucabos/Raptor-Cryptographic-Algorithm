@@ -17,6 +17,7 @@ Welcome to Crypto-Doc's documentation!
    basetestrecursivev4.2
    alternativev1
    alternativev2
+   Math_proof
 
 Indices and tables
 ==================
