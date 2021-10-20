@@ -1,0 +1,557 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\begin{document}
+\title{Raptor Cryptographic Matrix Algorithm}
+\newpage
+\part{Crypting}
+
+\begin{flushleft}
+
+This matrix encryption algorithm is based on the LU factorization, the resolution of which will be recalled by Gaussian elimination.
+\newline
+\\
+Horner recursive basic construction schemes and signed cyclic permutations will also be used.
+\end{flushleft}
+\begin{center}
+Let the matrix M to be encrypted be defined by
+\newline
+\\
+M =$
+\begin{bmatrix}
+	1&2&3&4\\
+	2&3&4&1\\
+	3&4&1&2\\
+	4&1&2&3\\
+\end{bmatrix}$
+\end{center}
+\begin{flushleft}
+We start by evaluating the size of M and adjusting with a default value if necessary in order to obtain a square matrix (
+An LU factorization is only possible on a square matrix.).
+\newline
+\\
+We will distinguish 4 matrices per image, respectively the matrices with values Red,  Blue, Green and Alpha.
+\newline
+\\
+ The progress of the algorithm being identical, one will generalize it to the resolution of the encryption of the matrix M.
+ \newline
+ \\
+Once the size has been adjusted if necessary, we first carry out an LU factorization of M.
+\end{flushleft}
+\newpage
+ \section*{Factorization}
+ Based on the following properties : 
+ \begin{itemize}
+ 	\item Any lower matrix resulting from an LU factorization has a diagonal made up of 1
+ 	\item Any multiplication of a lower matrix and an upper matrix resulting from an LU factorization does not admit as one and only result the original matrix
+ \end{itemize}
+
+ We will factorize the matrix M and adapt the matrices L and U to the algorithm using the Gauss elimination:
+\newline
+\\ 
+\begin{NiceMatrixBlock}[auto-columns-width]
+\[
+\begin{bNiceMatrix}
+1 & 0 & 0 & 0 \\
+0&1&0&0\\
+0&0&1&0\\
+0&0&0&1 
+\end{bNiceMatrix}
+\begin{bNiceMatrix}
+1&2&3&4\\
+2&3&4&1\\
+3&4&1&2\\
+4&1&2&3
+\end{bNiceMatrix}
+\]
+\newline
+\\
+\[
+\begin{bNiceMatrix}
+1 & 0 & 0 & 0 \\
+2&1&0&0\\
+0&0&1&0\\
+0&0&0&1 
+
+\end{bNiceMatrix}
+\begin{bNiceMatrix}
+1&2&3&4\\
+0&-1&-2&-7\\
+3&4&1&2\\
+4&1&2&3
+\end{bNiceMatrix}
+\]
+\newline
+\\
+
+\[
+\begin{bNiceMatrix}
+1 & 0 & 0 & 0 \\
+2&1&0&0\\
+3&0&1&0\\
+4&0&0&1 
+
+\end{bNiceMatrix}
+\begin{bNiceMatrix}
+1&2&3&4\\
+0&-1&-2&-7\\
+0&-2&-8&-10\\
+0&-7&-10&-13
+\end{bNiceMatrix}
+\]
+\newline
+\\
+
+\[
+\begin{bNiceMatrix}
+1 & 0 & 0 & 0 \\
+2&1&0&0\\
+3&2&1&0\\
+4&7&0&1 
+
+\end{bNiceMatrix}
+\begin{bNiceMatrix}
+1&2&3&4\\
+0&-1&-2&-7\\
+0&0&-4&4\\
+0&0&4&36
+\end{bNiceMatrix}
+\]
+\newline
+\\
+
+\[
+\begin{bNiceMatrix}{}
+1 & 0 & 0 & 0 \\
+2&1&0&0\\
+3&2&1&0\\
+4&7&-1&1 
+
+\end{bNiceMatrix}
+\begin{bNiceMatrix}
+1&2&3&4\\
+0&-1&-2&-7\\
+0&0&-4&4\\
+0&0&0&40
+\end{bNiceMatrix}
+\]
+\end{NiceMatrixBlock}
+
+\begin{flushleft}
+Let the matrices L and U be obtained by the factorization LU of the matrix M
+\newline
+\\
+\end{flushleft}
+
+\[
+L =
+\begin{bNiceMatrix}{}
+1 & 0 & 0 & 0 \\
+2&1&0&0\\
+3&2&1&0\\
+4&7&-1&1 
+
+\end{bNiceMatrix}
+\\
+U =
+\begin{bNiceMatrix}
+1&2&3&4\\
+0&-1&-2&-7\\
+0&0&-4&4\\
+0&0&0&40
+\end{bNiceMatrix}
+\]
+\newline
+\\
+\begin{flushleft}
+We will adapt L to the algorithm by subtracting the identity matrix $I_{4}$ from it.
+\end{flushleft}
+\begin{center}
+L'=L-$I_{4}$=
+$
+\begin{bNiceMatrix}{}
+	0 & 0 & 0 & 0 \\
+	2&0&0&0\\
+	3&2&0&0\\
+	4&7&-1&0 
+	
+\end{bNiceMatrix}
+$
+\end{center}
+
+\begin{flushleft}
+Once the matrices L 'and U have been calculated, we will add them into the numbered matrix C defined by:
+\end{flushleft}
+\begin{center}
+C=L'+U=
+$
+\begin{bNiceMatrix}{}
+1&2&3&4\\
+2&-1&-2&-7\\
+3&2&-4&4\\
+4&7&-1&40\\
+\end{bNiceMatrix}
+$
+\end{center}
+\begin{flushleft}
+This encrypted matrix C will be called an “intermediate encryption matrix”.
+\newline
+\\
+Once the matrix C has been optimized for the algorithm, we will perform a signed $\sigma$ permutation such that 
+\end{flushleft}
+
+$$size(M) \quad modulo \quad size(\sigma) = 0$$
+
+$\Longrightarrow$ Here, $size(M)=size(\sigma)=4$
+\newline
+\\
+\begin{flushleft}
+Let the signed permutation $\sigma$ defined on the columns of C with signature :\\
+ $$\sigma = [3,1,0,2]$$
+\end{flushleft}
+\newpage
+\section*{Signed permutation}
+\begin{flushleft}
+The permutation is defined by the following property: to each $\sigma$ signed permutation we can associate its $M_{\sigma}$ permutation matrix.
+\newline
+\\
+\end{flushleft}
+
+Here, for $\sigma = [3,1,0,2]$,
+$$
+ M_{\sigma}=
+\begin{bNiceMatrix}{}
+	0&0&1&0\\
+	0&1&0&0\\
+	0&0&0&1\\
+	1&0&0&0\\
+\end{bNiceMatrix}
+$$
+$$
+\boxed{
+\sigma(C)=C.M_{\sigma}}$$
+
+\[
+\sigma(C)=
+\begin{bNiceMatrix}{}
+1&2&3&4\\
+2&-1&-2&-7\\
+3&2&-4&4\\
+4&7&-1&40\\
+\end{bNiceMatrix}\\
+.
+\begin{bNiceMatrix}
+	0&0&1&0\\
+0&1&0&0\\
+0&0&0&1\\
+1&0&0&0\\
+\end{bNiceMatrix}
+=
+\begin{bNiceMatrix}
+4&2&1&3\\
+-7&-1&2&-2\\
+4&2&3&-4\\
+40&7&4&-1\\
+\end{bNiceMatrix}
+\]
+
+\[
+C'=\sigma(C)=
+\begin{bNiceMatrix}
+4&2&1&3\\
+-7&-1&2&-2\\
+4&2&3&-4\\
+40&7&4&-1\\
+\end{bNiceMatrix}
+\]
+\begin{flushleft}
+The reverse permutation $\sigma^{-1}$ will be calculated by transposing the matrix $M_{\sigma}$
+\newline
+\\
+\end{flushleft}
+
+$$\Longrightarrow
+\boxed{
+	\!\begin{aligned}
+&C = \sigma^{-1}(\sigma(C))\\
+& \quad =	\sigma^{-1}(C.M_{\sigma})\\
+& \quad = C.M_{\sigma}.^{t}M_{\sigma} \\
+& \quad = C.I_{d} \\
+& \quad = C
+  \end{aligned}
+}$$
+
+\newpage
+
+\section*{Bases Transposition}
+\begin{flushleft}
+Once the matrix has been transposed, we will use the permutation signature defined by $$ \sigma = [2,1,3,0] $$ as the key of the algorithm.
+The key $ \xi $ is defined by the relation
+\end{flushleft}
+$$
+\boxed{
+\xi_{i}=\sigma_{i}+11
+}$$
+
+$\Longrightarrow Here, \xi = [13,12,14,11] $
+\newline
+\\
+\begin{flushleft}
+
+We will calculate the table of associated bases as an example, for what follows we will refer to a table of complete bases.\\
+Either the base conversion application $ \ phi $ defined by:
+\end{flushleft}
+$$
+\boxed{
+	\varphi : C_{i,j} \longrightarrow C'_{i,j} = (C_{i,j})_{\xi_{i}}
+}$$
+\begin{flushleft}
+Where $\xi_{i}$ determine the associated digital base.\\
+In order to make the encryption more complex, we will multiply the matrix C by a coefficient $ \alpha $.
+\newline
+\\
+Here, we will choose $ \alpha $ = 100 arbitrarily.
+The higher $ \alpha $, the more complex the encryption.
+Let us calculate C 'the encrypted matrix to be transmitted where : 
+\end{flushleft}
+$$
+\boxed{
+C'=\varphi (\alpha . C) =
+\begin{bNiceMatrix}{}
+24a&125&79&1a1\\
+-4a4&-84&148&-148\\
+208&104&176&-208\\
+3007&587&334&-91\\
+\end{bNiceMatrix}\\
+}$$
+
+The associated matrix $M(\xi)$ is
+$$
+M(\xi) =
+\begin{bNiceMatrix}{}
+13&13&13&13\\
+12&12&12&12\\
+14&14&14&14\\
+11&11&11&11\\
+\end{bNiceMatrix}
+$$
+
+Give us the key as the first column : 
+$$
+\boxed{
+	\xi = [13,12,14,11] 
+}$$
+\newpage
+\part{Decrypting}
+\section*{Inverse Bases Transposition}
+Let the matrix C 'to be decrypted associated with the encryption key $ \ xi $, both defined by
+
+$$
+C' =
+\begin{bNiceMatrix}{}
+24a&125&79&1a1\\
+-4a4&-84&148&-148\\
+208&104&176&-208\\
+3007&587&334&-91\\
+\end{bNiceMatrix}
+$$
+
+$$\xi = [13,12,14,11]$$
+
+From $\xi$ we will extract $\sigma$ by inverse mapping :
+
+$$\Longrightarrow
+\boxed{
+	\sigma_{i}=\xi_{i}-11
+}$$
+
+$$\iff 
+\boxed{
+	\sigma = [2,1,3,0]
+}$$
+
+With C 'we will associate the application $\theta$ such that
+
+$$\theta = \varphi^{-1}$$
+$$ \iff  \theta ( \varphi ( C)) = C$$
+$$ \iff  \theta ( C') = C$$
+With
+$$
+\centering
+\left\{\begin{array}{@{}l@{}}
+(C'_{i,j})_{\xi_{i}} \longrightarrow (C_{i,j})_{10}\\
+Base(\xi_{i}) \longrightarrow Base(10)
+\end{array}
+\right.\,.
+$$
+Let's compute $D = \theta (C')$
+
+$$
+D =
+\begin{bNiceMatrix}{}
+400&200&100&300\\
+-700&-100&200&-200\\
+400&200&300&-400\\
+4000&700&400&-100\\
+\end{bNiceMatrix}
+$$
+\begin{flushleft}
+We go to divide the matrix D by the Constant coefficient $\alpha$ previously fixed.
+\end{flushleft}
+$$
+ \frac{D}{\alpha} = 
+\begin{bNiceMatrix}{}
+4&2&1&3\\
+-7&-1&2&-2\\
+4&2&3&-4\\
+4&7&4&-1\\
+\end{bNiceMatrix}
+$$
+
+\newpage
+\
+\section*{Inverse Signed permutation}
+\begin{flushleft}
+On va calculer la permutation cyclique signée $\tau$ telle que 
+\end{flushleft}
+$$\tau = \sigma^{-1} \Longrightarrow M(\tau)=M(\sigma_{-1})=^{t}M(\sigma)$$
+$$=
+\begin{bNiceMatrix}{}
+0&0&0&1\\
+0&1&0&0\\
+1&0&0&0\\
+0&0&1&0\\
+\end{bNiceMatrix}
+$$
+\begin{flushleft}
+In order to find the original matrix, we will multiply 
+\end{flushleft}
+$$\frac{D}{\alpha}.M(\tau) \Longrightarrow
+\boxed{
+C=\frac{D}{\alpha}.M(\tau)
+}$$
+
+\[
+C=
+\begin{bNiceMatrix}{}
+4&2&1&3\\
+-7&-1&2&-2\\
+4&2&3&-4\\
+4&7&4&-1\\
+\end{bNiceMatrix}\\
+.
+\begin{bNiceMatrix}
+0&0&0&1\\
+0&1&0&0\\
+1&0&0&0\\
+0&0&1&0\\
+\end{bNiceMatrix}
+=
+\begin{bNiceMatrix}
+1&2&3&4\\
+2&-1&-2&-7\\
+3&2&-4&4\\
+4&7&-1&40\\
+\end{bNiceMatrix}
+\]
+\begin{flushleft}
+We have found the ciphered matrix C by successive algebraic operations which we will convert into matrices L and U by the following system:
+\end{flushleft}
+$$
+\left\{\begin{array}{@{}l@{}}
+	L = inferior\_triangle(C) - diagonal(C) +Id_{4}\\
+	U = upper\_triangle(C)\\
+\end{array}
+\right.
+$$
+\begin{flushleft}
+We will place the diagonal of C on U by convention
+\end{flushleft}
+
+\newpage
+\section*{Multiplication}
+So let
+
+\[
+L=
+\begin{bNiceMatrix}{}
+0&0&0&0\\
+2&0&0&0\\
+3&2&0&0\\
+4&7&-1&0\\
+\end{bNiceMatrix}\\
++
+\begin{bNiceMatrix}
+1&0&0&0\\
+0&1&0&0\\
+0&0&1&0\\
+0&0&0&1\\
+\end{bNiceMatrix}
+=
+\begin{bNiceMatrix}
+1&0&0&0\\
+2&1&0&0\\
+3&2&1&0\\
+4&7&-1&1\\
+\end{bNiceMatrix}
+\]
+
+\quad \quad \quad $U=
+\begin{bNiceMatrix}{}
+1&2&3&4\\
+0&-1&-2&-7\\
+0&0&-4&4\\
+0&0&0&40\\
+\end{bNiceMatrix}
+$
+\newline
+\\
+\\
+We restore the matrix M decrypted by the following operation: $M = L.U$
+
+
+\[
+M=
+\begin{bNiceMatrix}{}
+1&0&0&0\\
+2&1&0&0\\
+3&2&1&0\\
+4&7&-1&1\\
+\end{bNiceMatrix}\\
++
+\begin{bNiceMatrix}
+1&2&3&4\\
+0&-1&-2&-7\\
+0&0&-4&4\\
+0&0&0&40\\
+\end{bNiceMatrix}
+=
+\begin{bNiceMatrix}
+1&2&3&4\\
+2&3&4&1\\
+3&4&1&2\\
+4&1&2&3\\
+\end{bNiceMatrix}
+\]
+
+Finally 
+$$
+\boxed{
+	M=
+\begin{bNiceMatrix}{}
+1&2&3&4\\
+2&3&4&1\\
+3&4&1&2\\
+4&1&2&3\\
+\end{bNiceMatrix}
+}$$
+
+$\Longrightarrow$ The matrix M is found, the encryption application is reversible and injective, that is to say that it admits only one antecedent.
+\newline
+\\
+\begin{center}
+$\Longrightarrow$
+The algorithm is valid
+\end{center}
+\end{document}
