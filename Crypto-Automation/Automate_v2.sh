@@ -55,17 +55,17 @@ if [ $mode -eq 1 ]
 then
 	splitted=""
 	count=0
-	while [ -n "${raw_data:count:16}" ]
+	while [ -n "${raw_data:count:$slice_size}" ]
 	do
-		splitted=$splitted" ""${raw_data:count:16}"
-		count=$((count + 16))
+		splitted=$splitted" ""${raw_data:count:$slice_size}"
+		count=$((count + $slice_size))
 	done
 	case $algo in
 		1) ./expect_script.exp "$splitted"  >> crypted.txt;;
 		2) ./expect_script2.exp "$splitted" >> crypted.txt;;
 		3) ./expect_script3.exp "$splitted" >> crypted.txt;;
-		4) ./expect_script4.exp "$splitted" >> crypted.txt;; # Here
-		5) ./expect_script5.exp "$splitted" >> crypted.txt;; # Here
+		4) ./expect_script4.exp "$splitted" >> crypted.txt;;
+		5) ./expect_script5.exp "$splitted" >> crypted.txt;;
 	esac
 	case $algo in
 		1 | 2 | 3 ) cat crypted.txt | grep "^[!\"#$%&()*+,./:;<=>?@][0-9a-z]" >> Crypted.txt   
@@ -93,15 +93,13 @@ else
 		echo $key >> tmp
 		count=$(( count + 1 ))
 	done
-	# splitted=`cat tmp`
-	splitted= eval cat tmp
-
+	splitted=`cat tmp`
 	case $algo in
 		1) ./expectD_script.exp "$splitted" >> uncrypted.txt;;
 		2) ./expectD_script2.exp "$splitted" >> uncrypted.txt;;
 		3) ./expectD_script3.exp "$splitted" >> uncrypted.txt;;
-		4) ./expectD_script4.exp "$splitted" >> uncrypted.txt;;  # Here
-		5) ./expectD_script5.exp "$splitted" >> uncrypted.txt;;  # Here
+		4) ./expectD_script4.exp "$splitted" >> uncrypted.txt;; 
+		5) ./expectD_script5.exp "$splitted" >> uncrypted.txt;; 
 	esac
 	count=10
 	nb_line=`wc -l uncrypted.txt | cut -d ' ' -f1`
