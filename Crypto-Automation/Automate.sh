@@ -5,29 +5,20 @@
 
 function Usage (){
 	echo " This Script must be used with this correct syntax :
-
 	./Automate.sh 1 1 String 
-
 	to automate the crypting process where :
 		* 1 define the mode (crypting)
 		* 1 define the algorithm to use
 		* String define the raw data entry
-
 		
 	It will produce two files Crypted.txt and Key.txt wich allow decrypting process
-
 	or
-
 	./Automate.sh 2 1
-
-
 	to automate the decrypting process where :
 		* 2 define the mode (decrypting).
 		* 1 define the algorithm to use
-
 	It need the Crypted.txt and Key.txt files to decrypt the full content.
 	It will produce a res.txt file containing all raw decrypted contents.
-
 	Each algorithm could be automated like that.
 	"
 }

@@ -1,13 +1,13 @@
 #!/usr/bin/expect
 
 # Author : CABOS Matthieu
-# Date : 07/10/2021
+# Date : 21/10/2021
 
 set timeout 2
 
 set splitted [lindex $argv 0]
 set count 0
-spawn ./basetestrecursivev3_longchaine_solveur
+spawn ./base_alternative_v2_solveur
 
 foreach item $splitted {
 	if { $count == 0 } {
@@ -16,10 +16,10 @@ foreach item $splitted {
 	} else {
 		set key $item
 		set count 0
-		expect "Chaine cryptée : "
+		expect "chaine cryptée : "
 		send $txt
 		send "\r"
-		expect "Clé unique : "
+		expect "clé : "
 		send $key
 		send "\r"
 		expect "c)ontinuer ou q)uitter
