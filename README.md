@@ -81,6 +81,12 @@ The Shell Script must be use with the following syntax :
 
 ./Automate.sh <Mode> <Algorithm> <Data_as_string_to_crypt>
  ```  
+ We should also use the Automate_v2.sh with the following syntax :
+ 
+ ```bash
+ ./Automate_v2.sh <mode> <Algorithm> <Slice size> <Data_as_string_to_crypt>
+ ```
+ 
 and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted data.
 
 ***********************************************
@@ -93,6 +99,12 @@ and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted
 ./Automate.sh <Mode> <Algorithm>
   ``` 
  will read the *Crypted.txt* and *Key.txt* files and will produce a res.txt containing uncrypted string.
+ 
+ To uncrypt the  *Crypted.txt* and *Key.txt* generated from the Automate_v2, please to use the following syntax :
+ 
+ ```bash
+ ./Automate_v2.sh <mode> <algorithm>
+ ```
  
  Results are shown as line by line result, wich can be colmated removing '\n' instances using the Clear_res.py Script.
  
