@@ -1,0 +1,31 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocpart{I}{\csname a:TocLink\endcsname{1}{x1-1000I}{QQ2-1-1}{Crypting Protocol}}{2}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-2000I}{QQ2-1-2}{Weigth List}}{2}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-3000I}{QQ2-1-3}{Cumulated weigth list}}{2}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-4000I}{QQ2-1-4}{Key Computing}}{2}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-5000I}{QQ2-1-5}{Crypting Process}}{5}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-6000I}{QQ2-1-6}{Encryption}}{5}\relax 
+\doTocEntry\tocpart{II}{\csname a:TocLink\endcsname{1}{x1-7000II}{QQ2-1-7}{Decrypting Protocol}}{7}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-8000II}{QQ2-1-8}{Initialisation}}{7}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-9000II}{QQ2-1-9}{Successive Base Transpositions - Step 1}}{9}\relax 
+\doTocEntry\tocsubsection{0.1}{\csname a:TocLink\endcsname{1}{x1-100000.1}{QQ2-1-10}{$\Xi _{0}$ = 018kh, $\xi _{0}$ = 21}}{9}\relax 
+\doTocEntry\tocsubsection{0.2}{\csname a:TocLink\endcsname{1}{x1-110000.2}{QQ2-1-11}{$\Xi _{1}$ = 05a3c, $\xi _{1}$ = 16}}{10}\relax 
+\doTocEntry\tocsubsection{0.3}{\csname a:TocLink\endcsname{1}{x1-120000.3}{QQ2-1-12}{$\Xi _{2}$ = 8064, $\xi _{2}$ = 10}}{11}\relax 
+\doTocEntry\tocsubsection{0.4}{\csname a:TocLink\endcsname{1}{x1-130000.4}{QQ2-1-13}{$\Xi _{3}$ = 12vj, $\xi _{3}$ = 34}}{11}\relax 
+\doTocEntry\tocsubsection{0.5}{\csname a:TocLink\endcsname{1}{x1-140000.5}{QQ2-1-14}{$\Xi _{4}$ = 2gai, $\xi _{4}$ = 28}}{12}\relax 
+\doTocEntry\tocsubsection{0.6}{\csname a:TocLink\endcsname{1}{x1-150000.6}{QQ2-1-15}{$\Xi _{5}$ = 0605a, $\xi _{5}$ = 14}}{13}\relax 
+\doTocEntry\tocsubsection{0.7}{\csname a:TocLink\endcsname{1}{x1-160000.7}{QQ2-1-16}{$\Xi _{6}$ = 67500, $\xi _{6}$ = 10}}{14}\relax 
+\doTocEntry\tocsubsection{0.8}{\csname a:TocLink\endcsname{1}{x1-170000.8}{QQ2-1-17}{$\Xi _{7}$ = 0ba30, $\xi _{7}$ = 13}}{14}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-180000.8}{QQ2-1-18}{Key build}}{15}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-190000.8}{QQ2-1-19}{Successive Base Transpositions - Step 2}}{16}\relax 
+\doTocEntry\tocsubsection{0.9}{\csname a:TocLink\endcsname{1}{x1-200000.9}{QQ2-1-20}{$\Xi _{8}$ = 277a4, $\xi _{8}$ = 13}}{16}\relax 
+\doTocEntry\tocsubsection{0.10}{\csname a:TocLink\endcsname{1}{x1-210000.10}{QQ2-1-21}{$\Xi _{9}$ = 25376, $\xi _{9}$ = 10}}{17}\relax 
+\doTocEntry\tocsubsection{0.11}{\csname a:TocLink\endcsname{1}{x1-220000.11}{QQ2-1-22}{$\Xi _{10}$ = 2a5db, $\xi _{10}$ = 14}}{17}\relax 
+\doTocEntry\tocsubsection{0.12}{\csname a:TocLink\endcsname{1}{x1-230000.12}{QQ2-1-23}{$\Xi _{11}$ = 5813, $\xi _{11}$ = 28}}{18}\relax 
+\doTocEntry\tocsubsection{0.13}{\csname a:TocLink\endcsname{1}{x1-240000.13}{QQ2-1-24}{$\Xi _{12}$ = 36u7, $\xi _{12}$ = 34}}{19}\relax 
+\doTocEntry\tocsubsection{0.14}{\csname a:TocLink\endcsname{1}{x1-250000.14}{QQ2-1-25}{$\Xi _{13}$ = 146367, $\xi _{13}$ = 10}}{20}\relax 
+\doTocEntry\tocsubsection{0.15}{\csname a:TocLink\endcsname{1}{x1-260000.15}{QQ2-1-26}{$\Xi _{14}$ = 27706, $\xi _{14}$ = 16}}{20}\relax 
+\doTocEntry\tocsubsection{0.16}{\csname a:TocLink\endcsname{1}{x1-270000.16}{QQ2-1-27}{$\Xi _{15}$ = 1j68c, $\xi _{15}$ = 21}}{21}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-280000.16}{QQ2-1-28}{Chain Polynom Resolution}}{22}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-290000.16}{QQ2-1-29}{Conclusion}}{27}\relax 
+\par 
