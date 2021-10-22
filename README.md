@@ -89,6 +89,8 @@ The Shell Script must be use with the following syntax :
  
 and will produce two file : *Crypted.txt* and *Key.txt* representing the crypted data.
 
+**Automate_v0.sh should be use as proof.**
+
 ***********************************************
 
 ### Decrypting Process
