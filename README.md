@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 ## Setup
 
-Build the html Documentation from the **make html** command.
+Build the html Documentation from the ``` make html``` command.
 
 The full printable pdf is avaible inside the Repository.
 
@@ -49,7 +49,7 @@ See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/
   
  Each algorithm can be indepedantly compiled via the command
  ```bash
- python3 -m nuitka --follow-imports Algorithm_to_compile
+ python3 -m nuitka --follow-imports <Algorithm_to_compile>
  ```
  This compilation need the nuitka module, avaible using the following command :
   ```bash
@@ -58,11 +58,13 @@ See Full documents @ : https://raptor-cryptographic-algorithm.readthedocs.io/en/
  
 ## Use
 
-To use, you can test each algorithm individually. 
+To use, you can test each algorithm individually using the simple command
 
-If you want to automate the process, use the Shell Script Automate.sh found in the Crypto-Automation Repertory.
+```bash
+python3 <algorithm to execute>
+```
 
-You can use the associated *Crypted.txt* and *Key.txt* file to get an example of decrypting process, wrote into res.txt using the decrypting process.
+If you want to automate the process, use the Shell Script Automate.sh found in the **[*Crypto-Automation Repertory*](https://github.com/matthieucabos/Raptor-Cryptographic-Algorithm/tree/main/Crypto-Automation)**
 
 This script use the Expect command, can be found using the command :
 
